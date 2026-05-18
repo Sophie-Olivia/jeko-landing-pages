@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.7
 
 # === Stage 1: build ===
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
 
 ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
@@ -17,7 +17,7 @@ RUN pnpm build
 RUN pnpm prune --prod
 
 # === Stage 2: runtime ===
-FROM node:20-alpine AS runtime
+FROM node:22-alpine AS runtime
 WORKDIR /app
 
 RUN addgroup -S app && adduser -S -G app app

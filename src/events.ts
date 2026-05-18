@@ -1,7 +1,7 @@
 import type { Context } from 'hono';
 import { env } from './env.js';
 import { logger } from './logger.js';
-import { supabase } from './supabase.js';
+import { getSupabase } from './supabase.js';
 
 export type EventType = 'view' | 'cta_click';
 
@@ -51,7 +51,7 @@ export function logEvent(
   const row = extractRow(eventType, slug, version, c);
   void (async () => {
     try {
-      const { error } = await supabase.from('landing_events').insert(row);
+      const { error } = await getSupabase().from('landing_events').insert(row);
       if (error) {
         logger.warn({ err: error, eventType, slug, version }, 'event insert failed');
       }
