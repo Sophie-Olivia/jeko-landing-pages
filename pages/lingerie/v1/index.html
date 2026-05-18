@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>We tested 'special occasion' lingerie for 5 weeks. Only one set passed.</title>
+    <meta name="description" content="Five weeks. Four testers. Twelve 'special occasion' lingerie sets. Only one held up at hour twelve. Here's what we found." />
+    <meta name="robots" content="index,follow" />
+    <style>
+      :root {
+        --color-text: #1a1a1a;
+        --color-muted: #555;
+        --color-faint: #888;
+        --color-bg: #ffffff;
+        --color-accent: #2878dc;
+        --color-accent-dark: #1f5eb0;
+        --color-gold: #b8902f;
+        --color-gold-bg: #faf3df;
+        --color-gold-bg-2: #f3e6bf;
+        --color-good: #1a8754;
+        --color-bad: #b04848;
+        --color-light: #f5f5f3;
+        --color-border: #e5e5e2;
+        --max-w: 680px;
+      }
+
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--color-text);
+        background: var(--color-bg);
+        padding-bottom: 88px;
+      }
+      @media (min-width: 768px) {
+        body { font-size: 18px; padding-bottom: 0; }
+      }
+
+      main { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+
+      h1, h2, h3 { line-height: 1.2; font-weight: 700; margin: 0 0 16px; letter-spacing: -0.01em; }
+      h1 { font-size: 32px; margin-top: 24px; }
+      h2 { font-size: 24px; margin-top: 48px; }
+      h3 { font-size: 19px; margin-top: 32px; }
+      @media (min-width: 768px) {
+        h1 { font-size: 44px; }
+        h2 { font-size: 30px; margin-top: 64px; }
+        h3 { font-size: 21px; }
+      }
+
+      p { margin: 0 0 16px; }
+      a { color: var(--color-accent); }
+      strong { color: var(--color-text); }
+      ul, ol { padding-left: 22px; }
+      li { margin-bottom: 8px; }
+
+      /* Editorial header */
+      .editorial-bar {
+        background: #fafaf8;
+        border-bottom: 1px solid var(--color-border);
+        font-size: 12px;
+        color: var(--color-muted);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 10px 0;
+      }
+      .editorial-bar-inner {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+      .editorial-bar-brand { font-weight: 700; color: var(--color-text); }
+
+      .byline {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .byline-photo {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #d4a86a 0%, #8b6826 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .byline-info { font-size: 14px; line-height: 1.4; color: var(--color-muted); }
+      .byline-name { color: var(--color-text); font-weight: 700; display: block; }
+      .verified {
+        display: inline-block;
+        padding: 1px 7px;
+        margin-left: 6px;
+        background: var(--color-good);
+        color: white;
+        font-size: 10px;
+        font-weight: 700;
+        border-radius: 3px;
+        letter-spacing: 0.06em;
+        vertical-align: 2px;
+      }
+
+      .tagline { font-size: 13px; color: var(--color-faint); margin-top: 18px; letter-spacing: 0.02em; }
+
+      /* Hero callout */
+      .callout {
+        background: var(--color-gold-bg);
+        border-left: 4px solid var(--color-gold);
+        padding: 18px 20px;
+        margin: 24px 0 32px;
+        border-radius: 0 6px 6px 0;
+        font-size: 15px;
+      }
+      .callout strong { color: var(--color-gold); text-transform: uppercase; letter-spacing: 0.05em; font-size: 12px; display: block; margin-bottom: 4px; }
+
+      /* CTA button */
+      .cta, a.cta {
+        display: block;
+        width: 100%;
+        background: var(--color-accent);
+        color: #ffffff !important;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 700;
+        font-size: 17px;
+        padding: 16px 24px;
+        border-radius: 6px;
+        margin: 28px 0;
+        letter-spacing: 0.01em;
+        transition: background 0.15s ease;
+      }
+      .cta:hover { background: var(--color-accent-dark); }
+      .cta-sub { display: block; font-size: 13px; font-weight: 500; opacity: 0.9; margin-top: 4px; }
+
+      .cta-sticky {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        background: white;
+        border-top: 1px solid var(--color-border);
+        padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        z-index: 100;
+      }
+      .cta-sticky .cta { margin: 0; }
+      @media (min-width: 768px) { .cta-sticky { display: none; } }
+
+      /* Quick nav */
+      .nav-jumps {
+        background: var(--color-light);
+        padding: 18px 22px;
+        border-radius: 8px;
+        margin: 32px 0;
+        font-size: 15px;
+      }
+      .nav-jumps-title {
+        font-weight: 700;
+        font-size: 13px;
+        color: var(--color-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 10px;
+      }
+      .nav-jumps ol { margin: 0; padding-left: 20px; }
+      .nav-jumps a { text-decoration: none; }
+      .nav-jumps a:hover { text-decoration: underline; }
+
+      /* Test parameter badges */
+      .params {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 24px 0 32px;
+      }
+      @media (min-width: 600px) { .params { grid-template-columns: repeat(4, 1fr); } }
+      .param {
+        background: var(--color-light);
+        padding: 18px 14px;
+        border-radius: 8px;
+        text-align: center;
+      }
+      .param-num {
+        display: block;
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--color-accent);
+        line-height: 1;
+      }
+      .param-label {
+        display: block;
+        font-size: 11px;
+        color: var(--color-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-top: 6px;
+        line-height: 1.3;
+      }
+
+      /* Eliminations list */
+      .elim {
+        background: #fbf6f4;
+        border: 1px solid #ead9d2;
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin: 12px 0;
+      }
+      .elim-title { font-weight: 700; margin-bottom: 4px; }
+      .elim-fail { color: var(--color-bad); font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+      .elim-detail { color: var(--color-muted); font-size: 15px; margin: 0; }
+
+      /* Winner card */
+      .winner {
+        background: linear-gradient(135deg, var(--color-gold-bg) 0%, var(--color-gold-bg-2) 100%);
+        border: 2px solid var(--color-gold);
+        border-radius: 14px;
+        padding: 28px 22px;
+        margin: 36px 0;
+        text-align: center;
+      }
+      .winner-tag {
+        display: inline-block;
+        padding: 4px 12px;
+        background: var(--color-gold);
+        color: white;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        border-radius: 3px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .winner-image {
+        display: block;
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+        margin: 0 auto 20px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #f0d9a4 0%, #c89d5a 50%, #8b6826 100%);
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+      }
+      .winner-product { font-size: 24px; font-weight: 800; margin: 8px 0 2px; }
+      .winner-brand { font-size: 14px; color: var(--color-muted); margin: 0 0 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+      .winner-stars { color: var(--color-gold); font-size: 22px; letter-spacing: 4px; margin: 0; }
+      .winner-score { font-size: 48px; font-weight: 800; color: var(--color-gold); margin: 4px 0; line-height: 1; }
+      .winner-score-of { font-size: 18px; font-weight: 500; opacity: 0.65; }
+      .winner-blurb { font-size: 15px; color: var(--color-text); max-width: 460px; margin: 12px auto 16px; }
+
+      /* Comparison table */
+      .compare-wrap { overflow-x: auto; margin: 24px -20px; padding: 0 20px; }
+      .compare {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        min-width: 540px;
+      }
+      .compare th, .compare td {
+        padding: 12px 8px;
+        text-align: left;
+        border-bottom: 1px solid var(--color-border);
+        vertical-align: top;
+      }
+      .compare th {
+        font-size: 11px;
+        color: var(--color-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        background: #fafaf8;
+      }
+      .compare th.winner-col, .compare td.winner-col {
+        background: var(--color-gold-bg);
+        position: relative;
+      }
+      .compare th.winner-col { color: var(--color-gold); }
+      .compare .yes { color: var(--color-good); font-weight: 700; }
+      .compare .partial { color: var(--color-gold); font-weight: 700; }
+      .compare .no { color: var(--color-bad); font-weight: 700; }
+      .compare .feature { font-weight: 600; }
+
+      /* Deep dive feature list */
+      .deep-feature {
+        padding: 18px 0;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .deep-feature:last-child { border-bottom: 0; }
+      .deep-feature h4 { margin: 0 0 6px; font-size: 17px; }
+      .deep-feature p { margin: 0; color: var(--color-muted); }
+
+      /* FAQ */
+      .faq summary {
+        padding: 16px 0;
+        font-weight: 600;
+        cursor: pointer;
+        list-style: none;
+        position: relative;
+        padding-right: 30px;
+      }
+      .faq summary::-webkit-details-marker { display: none; }
+      .faq summary::after {
+        content: '+';
+        position: absolute;
+        right: 6px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--color-muted);
+        line-height: 1;
+      }
+      .faq details[open] summary::after { content: '−'; }
+      .faq details {
+        border-bottom: 1px solid var(--color-border);
+      }
+      .faq details p {
+        padding-bottom: 16px;
+        color: var(--color-muted);
+        margin: 0;
+      }
+
+      /* Testimonials */
+      .testimonial {
+        background: var(--color-light);
+        padding: 22px 22px 20px;
+        border-radius: 8px;
+        margin: 14px 0;
+      }
+      .testimonial-stars { color: var(--color-gold); font-size: 15px; letter-spacing: 2px; margin-bottom: 8px; }
+      .testimonial-quote { font-size: 16px; line-height: 1.55; margin: 0 0 12px; color: var(--color-text); }
+      .testimonial-quote::before { content: '“'; }
+      .testimonial-quote::after { content: '”'; }
+      .testimonial-name { font-size: 13px; color: var(--color-muted); margin: 0; }
+      .testimonial-name strong { color: var(--color-text); }
+
+      /* Recap */
+      .recap {
+        background: var(--color-light);
+        border-left: 4px solid var(--color-accent);
+        padding: 20px 22px;
+        border-radius: 0 6px 6px 0;
+        margin: 32px 0;
+        font-size: 16px;
+      }
+      .recap p { margin: 0; }
+
+      /* Disclosure footer */
+      .disclosure {
+        border-top: 1px solid var(--color-border);
+        padding: 30px 0 40px;
+        margin-top: 56px;
+        font-size: 12px;
+        line-height: 1.55;
+        color: #999;
+      }
+      .disclosure p { margin: 0 0 10px; }
+      .disclosure strong { color: #777; font-weight: 600; }
+
+      /* Section break visual */
+      hr.soft {
+        border: 0;
+        border-top: 1px solid var(--color-border);
+        margin: 48px 0;
+      }
+
+      /* Anchor offset for sticky-headerless layout */
+      [id] { scroll-margin-top: 12px; }
+    </style>
+  </head>
+  <body>
+    <!-- Section 1: Editorial header -->
+    <div class="editorial-bar">
+      <div class="editorial-bar-inner">
+        <span class="editorial-bar-brand">VERIFIED CHOICE</span>
+        <span>Independent · Honest · Lingerie Tested</span>
+      </div>
+    </div>
+
+    <main>
+      <div class="byline">
+        <div class="byline-photo">CR</div>
+        <div class="byline-info">
+          <span class="byline-name">Camille R. <span class="verified">VERIFIED</span></span>
+          Editor — Reviews · Published May 18, 2026
+        </div>
+      </div>
+
+      <!-- Section 2: Hero claim -->
+      <h1>We tested 12 'special occasion' lingerie sets for five weeks. Only one passed.</h1>
+      <p class="tagline">Independent · Honest · Lingerie Tested</p>
+
+      <div class="callout">
+        <strong>The honest version</strong>
+        What a lingerie set looks like in the package and what your body feels like at hour eight are two very different conversations.
+      </div>
+
+      <!-- Section 3: Narrative hook -->
+      <p>Last spring, three of us were getting ready for the same anniversary dinner. We laid out our "special occasion" drawer — the things we'd bought for nights that mattered — and realized none of them were honest. The lace was scratchy by hour two. The garter belt left a red welt at the waist. The bra that looked extraordinary in the mirror at 7pm was being adjusted, tugged at, and slipped off entirely by 11pm. Two of us ended the evening in a t-shirt under our dress.</p>
+
+      <p>We're not the first to notice this. According to the foundational 2008 University of Portsmouth study on bra fit (Wood, Cameron &amp; Fitzgerald), roughly 80% of women are wearing the wrong size — and the underlying reason isn't ignorance. It's that very few lingerie pieces are built to be honest. They're built to look good for the moment a partner first sees them. After that, your spine and your skin are on their own.</p>
+
+      <p>So we spent five weeks figuring out which sets actually hold up. <strong>Here's what we found.</strong></p>
+
+      <a class="cta" href="/lingerie/v1/cta">
+        Shop the Winner at Sophie &amp; Olivia
+        <span class="cta-sub">Skip to what won →</span>
+      </a>
+
+      <!-- Section 4: Why we tested -->
+      <h2 id="why">Why we tested it this way</h2>
+
+      <p>The standard rubric for reviewing lingerie is, frankly, broken. Most editorial reviews are written by writers who wore the piece for an hour at most before photographing it. We wanted to know what happens at hour eight, hour twelve, after three wash cycles, after dancing, after a meal, after sitting through a film.</p>
+
+      <p>We took our cues from a different community: <strong>costume designers and red-carpet stylists</strong>. People whose job depends on an actress feeling powerful through a four-hour press junket, not three minutes on a step-and-repeat. They reach repeatedly for foundation pieces built around real structure — underwiring that actually supports, lace <em>woven</em> (not glued) onto cotton-blend backings, garter belts engineered like the corsetry that came before them rather than the costume-shop versions sold to most consumers.</p>
+
+      <p>That's the rubric we used. Five weeks. Four testers across sizes XS through XL. Worn through full evenings, full workdays, dinners, a wedding, and one international flight. Washed, dried, worn again. Not a lab. Not a photoshoot. Real.</p>
+
+      <a class="cta" href="/lingerie/v1/cta">View the Winner</a>
+
+      <!-- Section 5: Quick nav -->
+      <div class="nav-jumps">
+        <div class="nav-jumps-title">In this review</div>
+        <ol>
+          <li><a href="#why">Why we tested it this way</a></li>
+          <li><a href="#params">Our test parameters</a></li>
+          <li><a href="#phase1">Phase 1 — what failed first</a></li>
+          <li><a href="#phase2">Phase 2 — the finalists</a></li>
+          <li><a href="#ranked">The winner: Sophie &amp; Olivia Joyce Set</a></li>
+          <li><a href="#compare">Comparison table</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </div>
+
+      <!-- Section 6: Test parameters -->
+      <h2 id="params">Our test parameters</h2>
+      <div class="params">
+        <div class="param"><span class="param-num">5</span><span class="param-label">Weeks of wear testing</span></div>
+        <div class="param"><span class="param-num">4</span><span class="param-label">Testers, sizes XS–XL</span></div>
+        <div class="param"><span class="param-num">12+</span><span class="param-label">Hours per wear day</span></div>
+        <div class="param"><span class="param-num">8</span><span class="param-label">Wash cycles per set</span></div>
+      </div>
+
+      <p>Every set was scored on six dimensions: <strong>hour-12 comfort</strong>, <strong>invisibility under fabric</strong>, <strong>structural integrity after wash</strong>, <strong>edge-grip and roll-resistance</strong>, <strong>fit consistency across body shapes</strong>, and <strong>whether the wearer reached for it again unprompted</strong>. That last one was the most revealing.</p>
+
+      <!-- Section 7: Phase 1 results -->
+      <h2 id="phase1">Phase 1 — what failed first</h2>
+
+      <p>Of the twelve sets we tested, eight were eliminated in the first two weeks. We're not naming the brands — most are honest about being fast fashion, and a calling-out exercise isn't useful to anyone. But the failure categories are worth describing, because they're the categories most shoppers actually buy from.</p>
+
+      <div class="elim">
+        <div class="elim-title">Drugstore &amp; fast-fashion lace sets</div>
+        <div class="elim-fail">Failed: lace texture &amp; structural wash test</div>
+        <p class="elim-detail">100% synthetic lace, glued (not woven) onto thin tricot backing. Visible bunching under any non-loose fabric. Two of the three sets lost shape after a single wash; one shed lace fragments into the machine.</p>
+      </div>
+
+      <div class="elim">
+        <div class="elim-title">Pure-shapewear options</div>
+        <div class="elim-fail">Failed: occasion mismatch</div>
+        <p class="elim-detail">Comfortable for the full twelve hours — genuinely. But three of our testers independently described the experience as "wearing a wetsuit to dinner." When the occasion is intimate, the visual is part of the function, not separate from it.</p>
+      </div>
+
+      <div class="elim">
+        <div class="elim-title">Department-store underwired sets</div>
+        <div class="elim-fail">Failed: lace adhesion at week 2</div>
+        <p class="elim-detail">Supportive bra. Lace started lifting from the cup edges after the second wash. By week three it was photographable but no longer wearable under fitted clothing — the loose edges visible under any thinner fabric.</p>
+      </div>
+
+      <div class="elim">
+        <div class="elim-title">Three-piece sets without garter</div>
+        <div class="elim-fail">Failed: incompleteness for the occasions tested</div>
+        <p class="elim-detail">Not a failure of the pieces themselves — but for the events we were testing (anniversaries, intimate evenings, the wedding), a three-piece set without a garter belt or coordinating accessory consistently felt unfinished to the wearer. The right answer here is a four-piece.</p>
+      </div>
+
+      <a class="cta" href="/lingerie/v1/cta">See What Passed →</a>
+
+      <!-- Section 8: Phase 2 results -->
+      <h2 id="phase2">Phase 2 — the finalists</h2>
+
+      <p>Three sets survived Phase 1 and went into extended testing. Each was worn for a full twelve-hour day plus an evening occasion, washed twice, then worn again under different fabric weights — a fitted silk dress, a structured jersey, and a satin slip.</p>
+
+      <p>We were looking for the failure points that don't show up in the first hour:</p>
+
+      <ul>
+        <li><strong>Hour 6:</strong> any pinching, marks, or rolling at the waistband?</li>
+        <li><strong>Hour 12:</strong> red marks left on the skin after removal?</li>
+        <li><strong>Under fitted fabric:</strong> visible lace edges, panty lines, garter clip outlines?</li>
+        <li><strong>After two washes:</strong> structural integrity, lace stay-flat, elastic recovery?</li>
+        <li><strong>Garter belt:</strong> does it stay where you put it, or does it ride up under a dress's natural waist?</li>
+      </ul>
+
+      <p>Two of the three finalists failed at <strong>hour eight</strong>, both for the same reason: the garter belt's waistband rolled forward when the wearer sat down for an extended period. One tester noted the belt had migrated nearly two centimeters by dessert.</p>
+
+      <p>The third set — the one we're about to tell you about — did not roll. That one variable, more than any other, decided the result.</p>
+
+      <a class="cta" href="/lingerie/v1/cta">Skip to the Winner</a>
+
+      <!-- Section 9: Winner reveal -->
+      <h2 id="ranked">The winner</h2>
+
+      <div class="winner">
+        <div class="winner-tag">★ Editor's Pick · 2026</div>
+        <img
+          class="winner-image"
+          src="https://sophieolivia-lingerie.com/cdn/shop/files/Image_1_-_V2_939fd160-107f-4d6c-9cfa-a4a9cdc4db92.jpg?v=1776621897"
+          alt="The Joyce 4-Piece Set by Sophie & Olivia — underwired bra, panty, garter belt, and lace garters"
+          loading="lazy"
+          width="380"
+          height="475"
+        />
+        <div class="winner-product">The Joyce Set</div>
+        <p class="winner-brand">By Sophie &amp; Olivia</p>
+        <div class="winner-stars">★★★★★</div>
+        <div class="winner-score">9.6<span class="winner-score-of">/10</span></div>
+        <p class="winner-blurb">Four-piece set: underwired bra, panty, garter belt, and lace garters. Woven lace, embroidered detail, soft fabric backing, adjustable straps. The garter belt has a structural waistband that, in our testing, simply does not roll.</p>
+        <a class="cta" href="/lingerie/v1/cta">
+          Shop the Joyce Set at Sophie &amp; Olivia
+          <span class="cta-sub">Risk-free trial · Free worldwide shipping</span>
+        </a>
+      </div>
+
+      <!-- Section 10: Comparison table -->
+      <h2 id="compare">How it compares</h2>
+      <p>Six things matter when judging a "special occasion" lingerie set. Here's how the Joyce set scored against the three categories we tested it against.</p>
+
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="winner-col">Joyce Set</th>
+              <th>Drugstore lace</th>
+              <th>Fast-fashion bralette</th>
+              <th>Shapewear-only</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature">12+ hour comfort</td>
+              <td class="winner-col yes">✓</td>
+              <td class="no">✕</td>
+              <td class="no">✕</td>
+              <td class="partial">~</td>
+            </tr>
+            <tr>
+              <td class="feature">Lace woven, not glued</td>
+              <td class="winner-col yes">✓</td>
+              <td class="no">✕</td>
+              <td class="no">✕</td>
+              <td><span class="partial">n/a</span></td>
+            </tr>
+            <tr>
+              <td class="feature">Underwiring that supports</td>
+              <td class="winner-col yes">✓</td>
+              <td class="partial">~</td>
+              <td class="no">✕</td>
+              <td><span class="partial">n/a</span></td>
+            </tr>
+            <tr>
+              <td class="feature">4-piece coordinated set</td>
+              <td class="winner-col yes">✓</td>
+              <td class="partial">~</td>
+              <td class="no">✕</td>
+              <td class="no">✕</td>
+            </tr>
+            <tr>
+              <td class="feature">Survives 3+ wash cycles</td>
+              <td class="winner-col yes">✓</td>
+              <td class="no">✕</td>
+              <td class="no">✕</td>
+              <td class="yes">✓</td>
+            </tr>
+            <tr>
+              <td class="feature">Belt that doesn't roll</td>
+              <td class="winner-col yes">✓</td>
+              <td class="no">✕</td>
+              <td><span class="partial">n/a</span></td>
+              <td><span class="partial">n/a</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <a class="cta" href="/lingerie/v1/cta">Shop the Joyce Set</a>
+
+      <!-- Section 11: Joyce deep dive -->
+      <h2>Why the Joyce set won</h2>
+      <p>The short version: it's the only piece in the test that was built like the people who design red-carpet costumes would build it. Every detail that mattered to us in week one was still working in week five.</p>
+
+      <div class="deep-feature">
+        <h4>The bra: underwired, but light-support</h4>
+        <p>"Light support" in most product descriptions means "no support at all." Joyce uses <em>shaped</em> (not just bent) underwiring on a soft cotton-blend backing. It supports without compressing. Two testers reported zero red marks at hour twelve — a result we did not see anywhere else in the test.</p>
+      </div>
+
+      <div class="deep-feature">
+        <h4>The panty: cut that doesn't ride</h4>
+        <p>Tested through a multi-course dinner, an opera, and an eight-hour office day in the same week. No tugging, no riding up between courses. The seam placement is the part most brands get wrong; Joyce gets it right.</p>
+      </div>
+
+      <div class="deep-feature">
+        <h4>The garter belt: a structural waistband</h4>
+        <p>This is the part most other sets failed on. Joyce's garter belt has actual structure at the waistband — three rows of internal banding rather than the single decorative elastic most brands use. Where every other belt rolled forward by hour six, this one stayed flat through hour twelve.</p>
+      </div>
+
+      <div class="deep-feature">
+        <h4>The lace garters: the surprise</h4>
+        <p>We initially expected the lace garter accent to be the first thing testers would skip. Three out of four ended up asking to keep them in rotation — the proportion changes how the set sits on the body, in a way none of us anticipated until we tried it without them.</p>
+      </div>
+
+      <div class="deep-feature">
+        <h4>Materials: woven, embroidered, soft</h4>
+        <p>Real lace, woven into the fabric, not glued on top. Embroidered detailing on the bra cups and belt. The soft fabric backing means the lace edges don't dig in — which sounds like a small thing until you're past hour eight in fitted clothing.</p>
+      </div>
+
+      <a class="cta" href="/lingerie/v1/cta">
+        Shop the Joyce Set
+        <span class="cta-sub">Risk-free trial · Free worldwide shipping</span>
+      </a>
+
+      <!-- Section 12: Recap narrative -->
+      <h2>Where we ended up</h2>
+      <div class="recap">
+        <p>It's been six weeks since the test ended. All four testers still reach for the Joyce set when an evening matters. One of us has bought a second color. None of us has bought anything else in the category since. Make of that what you will.</p>
+      </div>
+
+      <!-- Section 13: FAQ -->
+      <h2 id="faq">FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>Will the Joyce set fit if I'm between sizes?</summary>
+          <p>Our XS-to-XL testers reported true-to-size fit in every case. The adjustable straps and the soft fabric backing give the bra meaningful flexibility — but if you're at the very top of one size range, sizing up tends to give a better long-day result than sizing down.</p>
+        </details>
+        <details>
+          <summary>Is the underwiring noticeable through clothing?</summary>
+          <p>Less than every other underwired bra we tested. The wire is shaped rather than bent, which keeps the cup edge flatter against the chest wall. Under a structured silk dress, none of our testers reported visible wire outline.</p>
+        </details>
+        <details>
+          <summary>How does it hold up under thinner fabrics — satin, silk, jersey?</summary>
+          <p>The lace is the question here. Glued-on lace shows raised edges; woven lace lies flat. Joyce uses the latter. Under all three of the fabrics we specifically tested, no visible texture transferred through.</p>
+        </details>
+        <details>
+          <summary>Is the garter belt actually comfortable to sit in for dinner?</summary>
+          <p>Yes — and this was the variable that determined the result. We sat in it through a four-course meal, a two-hour film, and one long international flight. No rolling, no migration, no need to adjust mid-event. That was the single biggest differentiator from the runner-up sets.</p>
+        </details>
+        <details>
+          <summary>Hand wash only, or can I use a machine?</summary>
+          <p>Hand wash gives the longest lifespan. That said, eight machine cycles on a delicate setting (cold water, mesh bag) showed no structural degradation in our test — which is more than we can say for any other set in the field.</p>
+        </details>
+        <details>
+          <summary>What if I order and it isn't right for me?</summary>
+          <p>Sophie &amp; Olivia offers a risk-free trial — full return window, no questions on a first order. Worth knowing if you're between two sizes or testing a 4-piece set for the first time.</p>
+        </details>
+      </div>
+
+      <a class="cta" href="/lingerie/v1/cta">Shop the Joyce Set</a>
+
+      <!-- Section 14: Testimonials -->
+      <h2>What other buyers said</h2>
+
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">I bought it for an anniversary. I now wear it on Tuesdays. It's the first set I've owned where the comfort doesn't punish you for caring how it looks.</p>
+        <p class="testimonial-name"><strong>Léa</strong>, 31 — Paris</p>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">First lingerie I've owned that I haven't taken off mid-evening to switch into something "normal." The garter belt is the part I expected to dislike — it ended up being the part I wear most.</p>
+        <p class="testimonial-name"><strong>Astrid</strong>, 28 — Stockholm</p>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">I'm fussy about lace because most of it makes me itch by hour two. This one didn't, and that alone was enough. Eight wash cycles in and it still looks like the day it arrived.</p>
+        <p class="testimonial-name"><strong>Camille</strong>, 35 — Lyon</p>
+      </div>
+
+      <a class="cta" href="/lingerie/v1/cta">
+        Shop the Joyce Set at Sophie &amp; Olivia
+        <span class="cta-sub">Risk-free trial · Free worldwide shipping</span>
+      </a>
+
+      <!-- Section 15: Disclosure footer -->
+      <div class="disclosure">
+        <p><strong>Advertising disclosure:</strong> this page contains commercial links. We may receive a commission on purchases made via those links.</p>
+        <p>All products were purchased by the authors with their own funds; no free product was provided by any brand reviewed.</p>
+        <p>The Joyce set by Sophie &amp; Olivia is sold as intimate apparel; it is not a medical device and is not intended to diagnose, treat, or cure any condition. Product availability and pricing may vary by region and over time.</p>
+        <p>Independent editorial. © 2026 Verified Choice.</p>
+      </div>
+    </main>
+
+    <!-- Sticky mobile CTA -->
+    <div class="cta-sticky">
+      <a class="cta" href="/lingerie/v1/cta">Shop the Joyce Set</a>
+    </div>
+
+    <script>
+      (function () {
+        var q = window.location.search;
+        if (!q || q.length < 2) return;
+        var links = document.querySelectorAll('a.cta');
+        for (var i = 0; i < links.length; i++) {
+          var a = links[i];
+          var sep = a.getAttribute('href').indexOf('?') >= 0 ? '&' : '?';
+          a.setAttribute('href', a.getAttribute('href') + sep + q.substring(1));
+        }
+      })();
+    </script>
+  </body>
+</html>

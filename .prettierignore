@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+.pnpm-store/
+
+# Hand-authored landing-page HTML — preserve formatting exactly as written.
+pages/**/*.html
+
+# Lockfiles
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
