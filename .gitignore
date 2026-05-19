@@ -32,3 +32,6 @@ coverage/
 # Misc
 .cache/
 .tmp/
+
+# Source competitor images — only the optimized versions in public/ are tracked
+comppics/

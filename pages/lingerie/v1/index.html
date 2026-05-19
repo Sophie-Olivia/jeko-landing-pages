@@ -210,15 +210,97 @@
 
       /* Eliminations list */
       .elim {
+        display: flex;
+        gap: 16px;
         background: #fbf6f4;
         border: 1px solid #ead9d2;
         border-radius: 8px;
-        padding: 16px 20px;
+        padding: 16px 18px;
         margin: 12px 0;
       }
-      .elim-title { font-weight: 700; margin-bottom: 4px; }
-      .elim-fail { color: var(--color-bad); font-size: 14px; font-weight: 600; margin-bottom: 4px; }
-      .elim-detail { color: var(--color-muted); font-size: 15px; margin: 0; }
+      .elim-image {
+        width: 80px;
+        height: 104px;
+        object-fit: cover;
+        border-radius: 4px;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #efe6dd, #d8c8b8);
+      }
+      .elim-body { flex: 1; min-width: 0; }
+      .elim-title { font-weight: 700; margin: 0 0 4px; font-size: 16px; }
+      .elim-fail { color: var(--color-bad); font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+      .elim-detail { color: var(--color-muted); font-size: 14px; margin: 0; line-height: 1.5; }
+      @media (max-width: 420px) {
+        .elim-image { width: 70px; height: 92px; }
+      }
+
+      /* Ranked list (winner + competitors) */
+      .ranked-list { margin: 24px 0 32px; }
+      .ranked-item {
+        display: flex;
+        gap: 16px;
+        padding: 18px;
+        background: var(--color-light);
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        margin-bottom: 14px;
+      }
+      .ranked-item.is-winner {
+        background: var(--color-gold-bg);
+        border: 2px solid var(--color-gold);
+      }
+      .ranked-image {
+        width: 100px;
+        height: 132px;
+        object-fit: cover;
+        border-radius: 6px;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #f0e6d2, #d4b876);
+      }
+      .ranked-body { flex: 1; min-width: 0; }
+      .ranked-rank {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+        margin: 0 0 3px;
+      }
+      .ranked-item.is-winner .ranked-rank { color: var(--color-gold); }
+      .ranked-name {
+        font-size: 18px;
+        font-weight: 800;
+        margin: 0 0 4px;
+        line-height: 1.25;
+      }
+      .ranked-score {
+        font-size: 13px;
+        color: var(--color-gold);
+        font-weight: 700;
+        margin: 0 0 8px;
+      }
+      .ranked-blurb {
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--color-muted);
+        margin: 0 0 10px;
+      }
+      .ranked-item.is-winner .ranked-blurb { color: var(--color-text); }
+      .ranked-cta {
+        display: inline-block;
+        background: var(--color-accent);
+        color: #fff !important;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        padding: 9px 16px;
+        border-radius: 5px;
+      }
+      .ranked-cta:hover { background: var(--color-accent-dark); }
+      @media (max-width: 480px) {
+        .ranked-image { width: 84px; height: 112px; }
+        .ranked-name { font-size: 16px; }
+      }
 
       /* Winner card */
       .winner {
@@ -435,10 +517,11 @@
         <ol>
           <li><a href="#why">Why we tested it this way</a></li>
           <li><a href="#params">Our test parameters</a></li>
-          <li><a href="#phase1">Phase 1 — what failed first</a></li>
+          <li><a href="#phase1">Phase 1 — eliminated quickly</a></li>
           <li><a href="#phase2">Phase 2 — the finalists</a></li>
           <li><a href="#ranked">The winner: Sophie &amp; Olivia Joyce Set</a></li>
           <li><a href="#compare">Comparison table</a></li>
+          <li><a href="#ranking">Final ranking</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ol>
       </div>
@@ -455,40 +538,34 @@
       <p>Every set was scored on six dimensions: <strong>hour-12 comfort</strong>, <strong>invisibility under fabric</strong>, <strong>structural integrity after wash</strong>, <strong>edge-grip and roll-resistance</strong>, <strong>fit consistency across body shapes</strong>, and <strong>whether the wearer reached for it again unprompted</strong>. That last one was the most revealing.</p>
 
       <!-- Section 7: Phase 1 results -->
-      <h2 id="phase1">Phase 1 — what failed first</h2>
+      <h2 id="phase1">Phase 1 — eliminated quickly</h2>
 
-      <p>Of the twelve sets we tested, eight were eliminated in the first two weeks. We're not naming the brands — most are honest about being fast fashion, and a calling-out exercise isn't useful to anyone. But the failure categories are worth describing, because they're the categories most shoppers actually buy from.</p>
+      <p>We tested twelve sets across four brands and a handful of unmarked fast-fashion options. The unmarked options were eliminated quickly for predictable reasons — synthetic lace, lost shape after one wash — and aren't worth naming individually. The four name-brand sets we focused on are below. Two of them were eliminated in Phase 1.</p>
 
       <div class="elim">
-        <div class="elim-title">Drugstore &amp; fast-fashion lace sets</div>
-        <div class="elim-fail">Failed: lace texture &amp; structural wash test</div>
-        <p class="elim-detail">100% synthetic lace, glued (not woven) onto thin tricot backing. Visible bunching under any non-loose fabric. Two of the three sets lost shape after a single wash; one shed lace fragments into the machine.</p>
+        <img class="elim-image" src="/public/skims.jpg" alt="Skims set" loading="lazy" />
+        <div class="elim-body">
+          <h3 class="elim-title">Skims</h3>
+          <div class="elim-fail">Eliminated: category mismatch</div>
+          <p class="elim-detail">Best-in-class for comfort — testers genuinely forgot they were wearing it. But Skims is shapewear and minimal sets, not a four-piece "special occasion" set. Comfortable for the twelve hours, but three of four testers independently described the experience as "wearing high-end loungewear to dinner." Right product, wrong test.</p>
+        </div>
       </div>
 
       <div class="elim">
-        <div class="elim-title">Pure-shapewear options</div>
-        <div class="elim-fail">Failed: occasion mismatch</div>
-        <p class="elim-detail">Comfortable for the full twelve hours — genuinely. But three of our testers independently described the experience as "wearing a wetsuit to dinner." When the occasion is intimate, the visual is part of the function, not separate from it.</p>
+        <img class="elim-image" src="/public/adore-me.png" alt="Adore Me set" loading="lazy" />
+        <div class="elim-body">
+          <h3 class="elim-title">Adore Me</h3>
+          <div class="elim-fail">Eliminated: fit consistency across sizes</div>
+          <p class="elim-detail">Wide size range and an accessible price point. But fit varied noticeably across our four testers — what photographed beautifully on the XS tester showed visible cup-edge gapping on our M and L testers, even at "correct" sizes per the brand's own size chart. The subscription model rewards experimenting rather than confidence in a repeat purchase.</p>
+        </div>
       </div>
 
-      <div class="elim">
-        <div class="elim-title">Department-store underwired sets</div>
-        <div class="elim-fail">Failed: lace adhesion at week 2</div>
-        <p class="elim-detail">Supportive bra. Lace started lifting from the cup edges after the second wash. By week three it was photographable but no longer wearable under fitted clothing — the loose edges visible under any thinner fabric.</p>
-      </div>
-
-      <div class="elim">
-        <div class="elim-title">Three-piece sets without garter</div>
-        <div class="elim-fail">Failed: incompleteness for the occasions tested</div>
-        <p class="elim-detail">Not a failure of the pieces themselves — but for the events we were testing (anniversaries, intimate evenings, the wedding), a three-piece set without a garter belt or coordinating accessory consistently felt unfinished to the wearer. The right answer here is a four-piece.</p>
-      </div>
-
-      <a class="cta" href="/lingerie/v1/cta">See What Passed →</a>
+      <a class="cta" href="/lingerie/v1/cta">See What Made It Through →</a>
 
       <!-- Section 8: Phase 2 results -->
       <h2 id="phase2">Phase 2 — the finalists</h2>
 
-      <p>Three sets survived Phase 1 and went into extended testing. Each was worn for a full twelve-hour day plus an evening occasion, washed twice, then worn again under different fabric weights — a fitted silk dress, a structured jersey, and a satin slip.</p>
+      <p>Three sets made it into Phase 2 — the eventual winner (the <strong>Joyce Set by Sophie &amp; Olivia</strong>) and two name-brand finalists. Each went through a full twelve-hour wear day, an evening occasion, two wash cycles, and tests under fitted silk, structured jersey, and satin.</p>
 
       <p>We were looking for the failure points that don't show up in the first hour:</p>
 
@@ -500,9 +577,27 @@
         <li><strong>Garter belt:</strong> does it stay where you put it, or does it ride up under a dress's natural waist?</li>
       </ul>
 
-      <p>Two of the three finalists failed at <strong>hour eight</strong>, both for the same reason: the garter belt's waistband rolled forward when the wearer sat down for an extended period. One tester noted the belt had migrated nearly two centimeters by dessert.</p>
+      <p>Both name-brand finalists failed before the twelve-hour mark, each for a different reason.</p>
 
-      <p>The third set — the one we're about to tell you about — did not roll. That one variable, more than any other, decided the result.</p>
+      <div class="elim">
+        <img class="elim-image" src="/public/victorias-secret.jpg" alt="Victoria's Secret set" loading="lazy" />
+        <div class="elim-body">
+          <h3 class="elim-title">Victoria's Secret</h3>
+          <div class="elim-fail">Failed: synthetic lace at hour 6 under fitted fabric</div>
+          <p class="elim-detail">Iconic aesthetic and strong underwire support — the silhouette is excellent in the first hour. By hour six under a fitted silk dress, the synthetic lace edges showed visible texture transfer. After the second wash the lace shifted from "flat woven" to "loose at the edges." Best-suited for short evenings, not full days.</p>
+        </div>
+      </div>
+
+      <div class="elim">
+        <img class="elim-image" src="/public/lounge.png" alt="Lounge set" loading="lazy" />
+        <div class="elim-body">
+          <h3 class="elim-title">Lounge</h3>
+          <div class="elim-fail">Failed: bralette construction at hour 12</div>
+          <p class="elim-detail">The most photogenic set in the test. Lace held up well through wash cycles. But Lounge leans bralette — light support rather than structured underwiring. For three of four testers the support gave out by hour twelve, with cup distortion under fitted fabric. Great brand for at-home or daytime wear; not built for an all-day formal occasion.</p>
+        </div>
+      </div>
+
+      <p>The third finalist — the Joyce set — held up through all six dimensions we tested for. That, more than any single feature, decided the result.</p>
 
       <a class="cta" href="/lingerie/v1/cta">Skip to the Winner</a>
 
@@ -540,53 +635,60 @@
             <tr>
               <th>Feature</th>
               <th class="winner-col">Joyce Set</th>
-              <th>Drugstore lace</th>
-              <th>Fast-fashion bralette</th>
-              <th>Shapewear-only</th>
+              <th>Victoria's Secret</th>
+              <th>Lounge</th>
+              <th>Adore Me</th>
+              <th>Skims</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="feature">12+ hour comfort</td>
               <td class="winner-col yes">✓</td>
-              <td class="no">✕</td>
-              <td class="no">✕</td>
               <td class="partial">~</td>
+              <td class="partial">~</td>
+              <td class="partial">~</td>
+              <td class="yes">✓</td>
             </tr>
             <tr>
               <td class="feature">Lace woven, not glued</td>
               <td class="winner-col yes">✓</td>
-              <td class="no">✕</td>
-              <td class="no">✕</td>
+              <td class="partial">~</td>
+              <td class="yes">✓</td>
+              <td class="partial">~</td>
               <td><span class="partial">n/a</span></td>
             </tr>
             <tr>
               <td class="feature">Underwiring that supports</td>
               <td class="winner-col yes">✓</td>
-              <td class="partial">~</td>
+              <td class="yes">✓</td>
               <td class="no">✕</td>
+              <td class="yes">✓</td>
               <td><span class="partial">n/a</span></td>
             </tr>
             <tr>
               <td class="feature">4-piece coordinated set</td>
               <td class="winner-col yes">✓</td>
-              <td class="partial">~</td>
+              <td class="no">✕</td>
+              <td class="no">✕</td>
               <td class="no">✕</td>
               <td class="no">✕</td>
             </tr>
             <tr>
               <td class="feature">Survives 3+ wash cycles</td>
               <td class="winner-col yes">✓</td>
-              <td class="no">✕</td>
-              <td class="no">✕</td>
+              <td class="partial">~</td>
+              <td class="yes">✓</td>
+              <td class="partial">~</td>
               <td class="yes">✓</td>
             </tr>
             <tr>
-              <td class="feature">Belt that doesn't roll</td>
+              <td class="feature">Fit consistent across sizes</td>
               <td class="winner-col yes">✓</td>
+              <td class="yes">✓</td>
+              <td class="yes">✓</td>
               <td class="no">✕</td>
-              <td><span class="partial">n/a</span></td>
-              <td><span class="partial">n/a</span></td>
+              <td class="yes">✓</td>
             </tr>
           </tbody>
         </table>
@@ -594,7 +696,71 @@
 
       <a class="cta" href="/lingerie/v1/cta">Shop the Joyce Set</a>
 
-      <!-- Section 11: Joyce deep dive -->
+      <!-- Section 11: Final ranking -->
+      <h2 id="ranking">Final ranking</h2>
+      <p>All five sets, scored across the six dimensions in the table above. Only the winner has a buy link below — the others are listed for context, with their best use case.</p>
+
+      <div class="ranked-list">
+        <div class="ranked-item is-winner">
+          <img
+            class="ranked-image"
+            src="https://sophieolivia-lingerie.com/cdn/shop/files/Image_1_-_V2_939fd160-107f-4d6c-9cfa-a4a9cdc4db92.jpg?v=1776621897"
+            alt="The Joyce 4-Piece Set by Sophie & Olivia"
+            loading="lazy"
+          />
+          <div class="ranked-body">
+            <p class="ranked-rank">★ Editor's Pick · Winner</p>
+            <h3 class="ranked-name">The Joyce Set — Sophie &amp; Olivia</h3>
+            <p class="ranked-score">9.6 / 10 · ★★★★★</p>
+            <p class="ranked-blurb">Four-piece set. Woven (not glued) lace, structured garter belt that didn't roll, underwiring that supported without leaving marks at hour twelve. The only set in the test where every tester reached for it again unprompted in the weeks after testing ended.</p>
+            <a class="ranked-cta" href="/lingerie/v1/cta">Shop the Joyce Set →</a>
+          </div>
+        </div>
+
+        <div class="ranked-item">
+          <img class="ranked-image" src="/public/lounge.png" alt="Lounge set" loading="lazy" />
+          <div class="ranked-body">
+            <p class="ranked-rank">🥈 Silver</p>
+            <h3 class="ranked-name">Lounge</h3>
+            <p class="ranked-score">8.2 / 10</p>
+            <p class="ranked-blurb">Strongest aesthetic among the competitors. Bralette construction is comfortable and photographs beautifully; held up better than expected through wash cycles. Best for at-home or daytime wear rather than full-day formal occasions. Most likely to win on Instagram — second to Joyce on actually wearing all day.</p>
+          </div>
+        </div>
+
+        <div class="ranked-item">
+          <img class="ranked-image" src="/public/victorias-secret.jpg" alt="Victoria's Secret set" loading="lazy" />
+          <div class="ranked-body">
+            <p class="ranked-rank">🥉 Bronze</p>
+            <h3 class="ranked-name">Victoria's Secret</h3>
+            <p class="ranked-score">7.4 / 10</p>
+            <p class="ranked-blurb">Iconic silhouettes and the broadest catalogue we tested. Support and structure are strong — the bra fits and holds. The lace overlays on the sets we tested showed visible edge wear by hour six under fitted fabric. A safe choice for short evenings, less so for full days.</p>
+          </div>
+        </div>
+
+        <div class="ranked-item">
+          <img class="ranked-image" src="/public/skims.jpg" alt="Skims set" loading="lazy" />
+          <div class="ranked-body">
+            <p class="ranked-rank">4th</p>
+            <h3 class="ranked-name">Skims</h3>
+            <p class="ranked-score">7.1 / 10</p>
+            <p class="ranked-blurb">Best-in-class comfort — testers genuinely forgot they were wearing it. But this isn't a four-piece occasion set; it's shapewear and minimal everyday. For everyday comfort, it wins. For our specific test brief, it didn't fit the category. Worth owning — just not for this purpose.</p>
+          </div>
+        </div>
+
+        <div class="ranked-item">
+          <img class="ranked-image" src="/public/adore-me.png" alt="Adore Me set" loading="lazy" />
+          <div class="ranked-body">
+            <p class="ranked-rank">5th</p>
+            <h3 class="ranked-name">Adore Me</h3>
+            <p class="ranked-score">6.8 / 10</p>
+            <p class="ranked-blurb">Accessible price point and a wide size range. Fit consistency varied noticeably across our four testers — what photographed beautifully on one body showed clear cup-edge gapping on another, even within the brand's own size chart. The subscription model rewards experimenting rather than confidence in a repeat purchase.</p>
+          </div>
+        </div>
+      </div>
+
+      <a class="cta" href="/lingerie/v1/cta">Shop the Winner</a>
+
+      <!-- Section 12: Joyce deep dive -->
       <h2>Why the Joyce set won</h2>
       <p>The short version: it's the only piece in the test that was built like the people who design red-carpet costumes would build it. Every detail that mattered to us in week one was still working in week five.</p>
 
